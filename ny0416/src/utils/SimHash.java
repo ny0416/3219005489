@@ -2,7 +2,7 @@ package utils;
 
 import java.math.BigInteger;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"ConstantConditions", "unused", "CharsetObjectCanBeUsed", "StringConcatenationInLoop", "ForLoopReplaceableByForEach"})
 public class SimHash {
     /**
      * 传入String，计算出它的hash值，并以字符串形式输出
@@ -92,6 +92,7 @@ public class SimHash {
 
     private static class HanLP {
         public static List<String> extractKeyword(String str, int length) {
+            return null;
         }
     }
 }

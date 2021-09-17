@@ -3,7 +3,7 @@ package main;
 import utils.HamMing;
 import utils.TxtIO;
 
-@SuppressWarnings({"unused", "MismatchedReadAndWriteOfArray", "RedundantSuppression", "ConstantConditions", "AccessStaticViaInstance", "UnnecessarySemicolon"})
+@SuppressWarnings({"unused", "MismatchedReadAndWriteOfArray", "RedundantSuppression", "UnnecessarySemicolon", "ConstantConditions", "AccessStaticViaInstance"})
 public class Main<similarity, resultFileName> {
     private String[] args;
     // 从命令行输入的路径名读取对应的文件，将文件的内容转化为对应的字符串
