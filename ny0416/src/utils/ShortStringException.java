@@ -1,5 +1,6 @@
 package utils;
 
+@SuppressWarnings("unused")
 public class ShortStringException extends Exception{
     public ShortStringException() {
         super();

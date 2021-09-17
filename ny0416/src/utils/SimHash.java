@@ -1,14 +1,13 @@
 package utils;
 
-import java.math.BigInteger;
 
-@SuppressWarnings({"ConstantConditions", "unused", "CharsetObjectCanBeUsed", "StringConcatenationInLoop", "ForLoopReplaceableByForEach"})
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.util.List;
+
+@SuppressWarnings({"CharsetObjectCanBeUsed", "StringConcatenationInLoop", "ForLoopReplaceableByForEach", "SpellCheckingInspection", "ConstantConditions", "RedundantSuppression"})
 public class SimHash {
-    /**
-     * 传入String，计算出它的hash值，并以字符串形式输出
-     * @param str 传入的Srting类型字符串
-     * @return 返回str的hash值
-     */
+
     public static String getHash(String str){
         try{
             // 这里使用了MD5获得hash值
@@ -20,13 +19,8 @@ public class SimHash {
         }
     }
 
-    /**
-     * 传入String,计算出它的simHash值，并以字符串形式输出
-     * @param str 传入的Srting类型字符串
-     * @return 返回str的simHash值
-     */
     public static String getSimHash(String str){
-        // 文本长度太短时HanLp无法取得关键字
+
         try{
             if(str.length() < 200) throw new ShortStringException("文本过短！");
         }catch (ShortStringException e){
@@ -35,8 +29,9 @@ public class SimHash {
         }
         // 用数组表示特征向量,取128位,从 0 1 2 位开始表示从高位到低位
         int[] v = new int[128];
-        // 1、分词（使用了外部依赖hankcs包提供的接口）
-        List<String> keywordList = HanLP.extractKeyword(str, str.length());//取出所有关键词
+        // 1、分词
+        List<String> keywordList = HanLP.extractKeyword(str, str.length());
+        //取出所有关键词
         // hash
         int size = keywordList.size();
         int i = 0;//以i做外层循环
@@ -75,21 +70,7 @@ public class SimHash {
         return simHash;
     }
 
-    private static class List<T> {
-        public char size() {
-            return 0;
-        }
-    }
-
-    private static class MessageDigest {
-        public static MessageDigest getInstance(String md5) {
-            return null;
-        }
-
-        public void digest(byte[] bytes) {
-        }
-    }
-
+    @SuppressWarnings("unused")
     private static class HanLP {
         public static List<String> extractKeyword(String str, int length) {
             return null;
